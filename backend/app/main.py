@@ -59,27 +59,20 @@ app = FastAPI(
 allowed_origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://agentic-ai-it-support.netlify.app",
 ]
 
-# Add the deployed Netlify frontend URL
+# Optional: support a different frontend URL configured on Render.
 netlify_url = os.getenv("FRONTEND_URL", "").strip().rstrip("/")
-
-if netlify_url:
+if netlify_url and netlify_url not in allowed_origins:
     allowed_origins.append(netlify_url)
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
     allow_credentials=False,
-    allow_methods=[
-        "GET",
-        "POST",
-        "PATCH",
-        "DELETE",
-    ],
-    allow_headers=[
-        "Content-Type",
-    ],
+    allow_methods=["GET", "POST", "PATCH", "DELETE"],
+    allow_headers=["Content-Type"],
 )
 
 # ==========================================
@@ -379,7 +372,7 @@ def create_confirmed_ticket(request: ConfirmTicketRequest):
         # provisional Medium priority.
         priority = "Medium"
 
-    # Step 3: Create ticket in SQLite
+    # Step 3: Create ticket in the configured database
     ticket = create_ticket(
         issue=request.issue,
         category=request.category,
