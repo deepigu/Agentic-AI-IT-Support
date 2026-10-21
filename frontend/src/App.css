@@ -1,0 +1,132 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f3f6fb;
+  color: #17243b;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #142c55, #2457a5);
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.app-header h1 {
+  margin: 0 0 12px;
+  font-size: 34px;
+}
+
+.app-header p {
+  margin: 0;
+  color: #dce8ff;
+}
+
+.dashboard {
+  width: min(1100px, 92%);
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  flex: 1;
+}
+
+.support-card,
+.results-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(20, 44, 85, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.support-card h2,
+.results-card h2 {
+  margin-top: 0;
+  color: #173b72;
+}
+
+.support-card p,
+.results-card p {
+  color: #66758b;
+  line-height: 1.6;
+}
+
+.support-card label {
+  display: block;
+  margin: 25px 0 10px;
+  font-weight: 600;
+}
+
+.support-card textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  resize: vertical;
+  outline: none;
+}
+
+.support-card textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.support-card button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.support-card button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.support-card button:disabled {
+  background: #a5b4cc;
+  cursor: not-allowed;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 20px;
+  background: #e8eef7;
+  color: #66758b;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .app-header h1 {
+    font-size: 26px;
+  }
+
+  .support-card,
+  .results-card {
+    padding: 22px;
+  }
+}

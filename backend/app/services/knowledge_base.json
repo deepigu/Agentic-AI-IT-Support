@@ -1,0 +1,100 @@
+
+{
+  "articles": [
+    {
+      "id": "KB001",
+      "category": "Network Issue",
+      "title": "Wi-Fi or Internet Connection Problems",
+      "keywords": [
+        "wifi",
+        "wi-fi",
+        "internet",
+        "network",
+        "dns",
+        "wireless",
+        "disconnecting",
+        "connection lost",
+        "cannot connect",
+        "can't connect",
+        "no internet",
+        "network unavailable"
+      ],
+      "solutions": [
+        "Check whether Wi-Fi is enabled.",
+        "Verify that the device is connected to the correct network.",
+        "Restart the computer.",
+        "Check whether other devices can access the internet.",
+        "Contact IT support if the problem continues."
+      ]
+    },
+    {
+      "id": "KB002",
+      "category": "Authentication Issue",
+      "title": "Password and Login Problems",
+      "keywords": [
+        "password",
+        "login",
+        "sign in",
+        "account"
+      ],
+      "solutions": [
+        "Verify the username.",
+        "Check Caps Lock and keyboard layout.",
+        "Use the approved password reset process.",
+        "Contact IT support if the account is locked."
+      ]
+    },
+    {
+      "id": "KB003",
+      "category": "Performance Issue",
+      "title": "Slow Computer Troubleshooting",
+      "keywords": [
+        "slow",
+        "freezing",
+        "lagging",
+        "performance"
+      ],
+      "solutions": [
+        "Restart the computer.",
+        "Open Task Manager and check CPU and memory usage.",
+        "Close unnecessary applications.",
+        "Check available disk space.",
+        "Contact IT support if performance does not improve."
+      ]
+    },
+    {
+      "id": "KB004",
+      "category": "Printer Issue",
+      "title": "Printer Troubleshooting",
+      "keywords": [
+        "printer",
+        "printing",
+        "print job"
+      ],
+      "solutions": [
+        "Check that the printer is powered on.",
+        "Verify the printer connection.",
+        "Check paper and toner levels.",
+        "Inspect the print queue for stuck jobs.",
+        "Contact IT support if printing still fails."
+      ]
+    },
+    {
+      "id": "KB005",
+      "category": "Email Issue",
+      "title": "Email and Outlook Troubleshooting",
+      "keywords": [
+        "email",
+        "outlook",
+        "mailbox"
+      ],
+      "solutions": [
+        "Check the internet connection.",
+        "Verify the email service status.",
+        "Check the mailbox storage limit.",
+        "Restart the email application.",
+        "Contact IT support if emails are still not working."
+      ]
+    }
+  ]
+}
