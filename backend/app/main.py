@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from backend.app.agents.conversation_agent import chat_with_it_agent
-
+import os
 # ==========================================
 # IMPORT AI AGENTS
 # ==========================================
@@ -51,16 +51,25 @@ app = FastAPI(
     version="1.1.0",
 )
 
+
 # ==========================================
-# CONFIGURE CORS FOR REACT
+# CONFIGURE CORS FOR REACT AND NETLIFY
 # ==========================================
+
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+# Add the deployed Netlify frontend URL
+netlify_url = os.getenv("FRONTEND_URL", "").strip().rstrip("/")
+
+if netlify_url:
+    allowed_origins.append(netlify_url)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=False,
     allow_methods=[
         "GET",

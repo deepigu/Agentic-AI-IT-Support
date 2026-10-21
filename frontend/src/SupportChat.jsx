@@ -3,10 +3,14 @@ import { useEffect, useRef, useState } from "react";
 import "./SupportChat.css";
 
 // ==========================================
-// FASTAPI BACKEND
+// FASTAPI BACKEND URL
 // ==========================================
 
-const API_URL = "http://127.0.0.1:8000";
+// Netlify uses VITE_API_URL.
+// Local development uses localhost.
+
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 // ==========================================
 // LOCAL STORAGE KEY
